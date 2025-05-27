@@ -3,7 +3,7 @@
 
 namespace childcounter;
 
-public class Api
+public class Api : IApi
 {
     /*public static async Task<Data> GetChildDataAsync()
     {
@@ -20,8 +20,8 @@ public class Api
         var childData = new Data
         {
             Id = 1,
-            ChildCount = 5,
-            Eliminate = 7
+            ChildCount = 7,
+            Eliminate = 13
         };
         
         return childData;
