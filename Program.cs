@@ -4,9 +4,9 @@ using childcounter;
 
 
 var data = new Api().GetChildDataAsync();
-var child = new Child();
+var child = new Child();//feed child count into this method = new Child(data.childCount)
 var elimCount = data.Eliminate;
-var eliminatedList = new List<string>();
+var eliminatedList = new List<string>(); 
 var count = 1;
 
 while (child.ChildList().Count > 1)
