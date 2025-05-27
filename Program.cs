@@ -9,6 +9,8 @@ var data = await Api.GetChildDataAsync();
 Console.WriteLine(data.Id.ToString());
 Console.WriteLine(data.ChildCount.ToString());
 Console.WriteLine(data.Eliminate.ToString());
+
+//Move back to separate file
 public class Data
 {
     public int Id { get; set; }
@@ -16,6 +18,8 @@ public class Data
     public int Eliminate { get; set; }
 }
 
+//Move back to separate file
+//Manually assign object returned for now, to get the rest of the project working.
 public class Api
 {
     public static async Task<Data> GetChildDataAsync()
