@@ -4,33 +4,33 @@ using childcounter;
 
 
 var data = new Api().GetChildDataAsync();
-var child = new Child();//feed child count into this method = new Child(data.childCount)
+var child = new Child();
+var replaceMe = child.ChildList(data.ChildCount);
 var elimCount = data.Eliminate;
 var eliminatedList = new List<string>(); 
-var count = 1;
 
-while (child.ChildList().Count > 1)
+while (replaceMe.Count > 1)
 {
-    if (data.Eliminate % data.ChildCount > 0)
+    if (data.Eliminate % replaceMe.Count > 0)
     {
-        elimCount = data.Eliminate - data.ChildCount;
+        elimCount = data.Eliminate % replaceMe.Count;
     }
 
-    if (data.Eliminate % data.ChildCount == 0)
+    if (data.Eliminate % replaceMe.Count == 0)
     {
-        elimCount = 0;
-        eliminatedList.Add(child.ChildList()[elimCount]);
-        child.ChildList().RemoveAt(elimCount );
+        elimCount = data.Eliminate - 1;
+        eliminatedList.Add(replaceMe[elimCount]);
+        replaceMe.RemoveAt(elimCount );
     }
     else
     {
-        eliminatedList.Add(child.ChildList()[elimCount - 1]);
-        child.ChildList().RemoveAt(elimCount - 1);
+        eliminatedList.Add(replaceMe[elimCount - 1]);
+        replaceMe.RemoveAt(elimCount - 1);
     }
 }
 
 Console.WriteLine($"The game is {data.Id}");
-Console.WriteLine($"The surviving child is {child.ChildList()[0]}");
+Console.WriteLine($"The surviving child is {replaceMe[0]}");
 
 //ToDo:
 //Add unit tests

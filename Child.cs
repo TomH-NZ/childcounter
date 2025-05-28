@@ -2,10 +2,9 @@
 
 public class Child
 {
-    public List<string> ChildList()
-    { //extract out the data and childTital variables, feed into the method (List<string> ChildList(int childTotal)
-        var data = new Api().GetChildDataAsync();
-        var childTotal = data.ChildCount;
+
+    public List<string> ChildList(int childTotal)
+    {
         
         var childList = new List<string>();
 
