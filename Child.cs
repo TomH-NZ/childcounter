@@ -1,6 +1,6 @@
 ﻿namespace childcounter;
 
-public class Child
+public class Child : IChild
 {
 
     public List<string> ChildList(int childTotal)
