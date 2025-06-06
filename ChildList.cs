@@ -1,16 +1,14 @@
 ﻿namespace childcounter;
 
-public class Child : IChild
+public class ChildList : IChild //rename to ChildList
 {
 
-    public List<string> ChildList(int childTotal)
+    public List<string> List(int childTotal) // rename to something that reflects the object better
     {
         
         var childList = new List<string>();
 
-        int count;
-
-        for (count = 1; count <= childTotal;)
+        for (var count = 1; count <= childTotal;)
         {
             childList.Add($"Child {count}");
             count++;
