@@ -2,5 +2,5 @@
 
 public interface IChild
 {
-    List<string> ChildList(int childTotal);
+    List<string> List(int childTotal);
 }

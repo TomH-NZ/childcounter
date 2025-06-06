@@ -4,8 +4,8 @@ using childcounter;
 
 
 var data = new Api().GetChildDataAsync();
-var child = new Child();
-var replaceMe = child.ChildList(data.ChildCount);
+var child = new ChildList(); 
+var replaceMe = child.List(data.ChildCount);
 var elimCount = data.Eliminate;
 var eliminatedList = new List<string>(); 
 
@@ -35,3 +35,5 @@ Console.WriteLine($"The surviving child is {replaceMe[0]}");
 //ToDo:
 //Add unit tests
 //Add calculation for Eliminate is more than 2 times greater than ChildCount, ie: Eliminate = 4, ChildCount = 2.
+//Look into eliminate being lower than childList.
+//Add so that count starts at child immediately after eliminated one.
